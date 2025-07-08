@@ -2,6 +2,7 @@
 ## Analysis and Alternative model
 
 Author: Steve Traugott
+
 CSWG Workshop July 08 2025
 
 ---
@@ -162,6 +163,7 @@ and contrasts them with the proposed γ(3,4) formulation.
   and easier to implement, especially in domains where a coarse view of
   process dynamics is sufficient.
 
+---
 ## Discussion and Implications
 
 The simpler model raises some important reflections:
