@@ -1,32 +1,18 @@
-contrast with simpler event/state model
+create slides
 
-I wonder if Mark has some things backwards and that is resulting in
-more complexity than necessary.  I think a more elegant
-model would be simply that nodes are states and edges are
-events.  For example:
+Replace the slides in README.md with a two-part remark.js slide deck
+that covers:
 
-nodes:
-- nodes represent event, things, or concepts? why don't edges
-  represent events, and nodes represent states?
-- a thing is a state of matter -- why isn't that simply a state node?
-- a concept is, fundamentally, also a state of matter in a brain or
-  other storage. that, too, can simply be a state node
-
-edges:
-- nearness is a state -- why isn't NEAR a state? 
-- a causual sequence is a sequence of events connecting states -- right?
-- CONTAINS is a state -- why isn't that a node? 
-- EXPRESSES is a state -- why isn't that a node?
-
-Add a discussion of these points in alternative.md.
+- part 1: the contents of analysis.md
+- part 2: the contents of alternative.md
 
 Sysmsg: 
-  Analyze the paper and improve analysis.md.  Wrap lines at 70 characters.
-  Do not rewrap lines unless they are longer than 70 characters.
-  Do not rewrap markdown header lines.
+  Wrap lines at 70 characters. Do not rewrap lines unless they are
+  longer than 70 characters. Do not rewrap markdown header lines.
 In: 
   Semantics_Graphical.txt
   analysis.md
-Out: 
-  analysis.md
   alternative.md
+  README.md
+Out: 
+  README.md

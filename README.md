@@ -1,137 +1,185 @@
-class: center, middle
 
-# Workshop Title
 
-**Subtitle: A slide deck template powered by Remark.js and Go**
+# Semantic Spacetime and Graphical Reasoning
+## Analysis and Alternative model
 
-Author: Your Name
-
-*CSWG Workshop June 10 2025*
-
-[http://ciwg.github.io/workshop-YYYY-MM-DD-template/](http://ciwg.github.io/workshop-YYYY-MM-DD-template/)
-
-For additional materials visit the repo on [Github](https://github.com/ciwg/workshop-YYYY-MM-DD-template/)
+Author: Steve Traugott
+CSWG Workshop July 08 2025
 
 ---
 
-## Outline
-
-1. Quick Start
-2. Setting up Github Pages
-2. Introduction
-3. How it Works
-5. Code Example
-6. Table Example
+# Part 1: Analysis
 
 ---
 
-## Quick Start
+# Analysis of "Agent Semantics, Semantic Spacetime, and Graphical Reasoning"
 
-**Copy this template**
-1. Visit the [workshop template](https://github.com/ciwg/workshop-YYYY-MM-DD-template/), and click "Use this template".  
-![:img Template Button, 30%](https://docs.github.com/assets/cb-76823/mw-1440/images/help/repository/use-this-template-button.webp)
-2. Make sure **Owner** is set to "ciwg" - *This makes sure you still retain access to 'Github Pages' Settings later.*
-3. Name your repository following **'workshop-YYYY-MM-DD-workshop-name'** format.
+This paper by Mark Burgess develops a formal model of knowledge
+representation based on a graph‐theoretic approach called Semantic
+Spacetime. It aims to bridge processes in the physical and conceptual
+realms by encoding agents and their interactions as nodes and labeled
+links. The key elements of the paper can be summarized as follows:
 
-**Modify the content**
-1. Clone the repo to your local machine.
-3. Edit `README.md` to create the content of your workshop.
-4. In your terminal, run `make` to generate and host `index.html`
-5. Open http://localhost:8192 to view your slides.
+1. **Semantic Spacetime Model**  
+   The model treats spacetime as a collection of agents (nodes)
+   connected via directed edges (links) that represent interactions or
+   relationships. Each link is associated with one of four irreducible
+   types:
+   - **Type 0 (NEAR):** Denotes equivalence or proximity without
+     direction.
+   - **Type ±1 (LEADS TO):** Captures causal or sequential
+     relationships.
+   - **Type ±2 (CONTAINS):** Reflects spatial or membership
+     relations.
+   - **Type ±3 (EXPRESSES):** Relates to the expression of properties or
+     attributes.
 
----
+   These link types, based on spacetime characteristics, provide a
+   compact language for describing processes and form the basis for the
+   paper’s γ(3,4) representation.
 
-## Setting up Github Pages
+2. **Gamma(3,4) Representation and Node Meta-Types**  
+   To resolve ambiguities in semantic representation, nodes are
+   classified into three meta-types:
+   - **Events (e):** Temporary, process-like occurrences.
+   - **Things (t):** Persistent entities with material or realized
+     aspects.
+   - **Concepts (c):** Invariant, abstract ideas or properties.
 
-1. Push to GitHub
-2. Go to Settings > Pages
-3. Select source: main branch, / (root)
-4. Your slides will be live at:
-'https://ciwg.github.io/your-workshop-name/'
-5. Update the URL on the cover page as needed.
+   The paper outlines interaction rules and allowed transitions (e.g.,
+   events can lead to events, things can contain other things, and
+   concepts can express properties) using both verbal explanations and
+   matrix formulations.
 
-Optional: Click the Settings ⚙️ in the About section of the repo. Check ✅ 'Use your GitHub Pages website'
+3. **Graphical Algebra and Matrix Representations**  
+   The work explores how graphs can be analyzed through their
+   adjacency and incidence matrices. These matrix representations help
+   formalize concepts such as:
+   - **Absorbing States:** Nodes where flows (information or value)
+     converge, leading to loss of historical detail.
+   - **Eigenvector Analysis:** The application of the Frobenius-Perron
+     theorem to determine dominant behavior on the graph, such as
+     importance rankings and flow equilibrium.
 
----
+   These techniques underscore the balance between process dynamics
+   (information flow, conservation, and loss) and qualitative semantics.
 
-## Introduction
+4. **Application to Arithmetic Processes**  
+   An intriguing aspect of the paper is the interpretation of basic
+   arithmetic operations (addition, subtraction, multiplication, and
+   division) using the graph model. Different interpretations are
+   provided:
+   - **Addition and Subtraction:** Viewed as both translations along the
+     number line (external transformation) and as changes in an agent’s
+     internal inventory.
+   - **Multiplication and Division:** Here, multiplication is seen as a
+     process that duplicates or aggregates, while division is interpreted
+     as a sharing or partitioning of an amount among agents.
 
-This template uses [remark](https://remarkjs.com/#1) and Go to build and serve slide presentation. Slides are written in Markdown using a couple 'formatting rules' and compiled with Go into a static HTML file.
+   In particular, the discussion on division by zero highlights how the
+   absorbing nature of certain nodes in a directed graph can be analogous
+   to traditional challenges in arithmetic. Various viewpoints are offered,
+   such as whether the result should be treated as an infinite flow or a null
+   outcome, or whether additional remedial information is needed.
 
---
+5. **Implications and Broader Connections**  
+   The paper concludes by observing that although the Semantic Spacetime
+   model simplifies link identification and reduces ambiguity without
+   resorting to full ontologies, it also raises deeper questions. Some
+   points include:
+   - How well the model supports trustworthy and robust knowledge
+     representations.
+   - The inevitable presence of absorbing states in finite, directed graphs.
+   - The potential impact on artificial intelligence in areas where
+     context, inference, and dynamic processes are critical.
 
-### Remark.js:
-- Use `---` to separate slides, `--` to increment a slide
-- Highly customizable with CSS and JavaScript
-- Supports speaker notes (press "P" to toggle in/out)
-- Configurations (e.g. scroll navigation) can be enabled or disabled
-
-Visit the [wiki](https://github.com/gnab/remark/wiki/Markdown) to understand more built-in formating options.
---
-
-### Go code:
-The Go code in this repo extends the basic functionality of Remark.js by automating the slide building process, incorporating a template file, and enabling live-reloading during presentating & development.
-
-???
-This is a speaker note. View speaker mode using "P" hotkey or insert #p to the url, for example: http://localhost:8192/#p5
-
----
-
-## How it Works
-
-.center[![:img How it works, 100%](images/How-it-works.svg)]
-
-**NOTE:** Sometimes the browser caches too aggressively & recent changes won't displayed. Use **`Ctrl+Shift+R`** (or `Cmd+Shift+R` on Mac) to complete a 'hard refresh' of your browser tab.  
-
----
-
-## Code Example
-
-```go
-package main
-
-import "fmt"
-
-// a long function that causes the code block to need a scrollbar
-// to demonstrate that code blocks can be scrolled
-func longFunction() {
-    // do nothing for several lines
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-    fmt.Println("Hello, World!")
-}
-
-func main() {
-    fmt.Println("Hello, World!")
-}
-```
+Overall, Burgess’s work proposes a unified, graph-based framework for
+representing both physical and abstract processes. By using a minimal set
+of irreducible link types and node meta-types, the model offers a way to
+reason about dynamics, conservation, and even arithmetic operations by
+emphasizing the interplay between process and meaning.
 
 ---
 
-## Table Example
+# Part 2: Alternative Perspective
 
-Insert a table to display data:
+# Alternative Perspective: A Simpler Event/State Model
 
-| Feature       | Description                          |
-|---------------|--------------------------------------|
-| Markdown      | Simple syntax for writing slides     |
-| LaTeX         | Support for mathematical expressions |
-| Customization | CSS and JavaScript for styling      |
+An alternative approach to knowledge representation is to use a 
+simpler event/state model where nodes represent states and edges represent 
+events. In this view, the inherent complexity of Burgess’s Semantic 
+Spacetime model is reduced by abstaining from multiple meta-types for nodes 
+and by assigning events solely to links. This section outlines the key ideas 
+and contrasts them with the proposed γ(3,4) formulation.
 
-You can modify table formatting by editing the CSS in the template file.
+## Core Ideas of the Simplified Model
+
+1. **States as Fundamental Nodes**  
+   In the event/state model, every node in the graph is a distinct state.  
+   Whether the state is a snapshot of a physical condition, a concept held 
+   in a mind, or a representation of an object, it is always treated as a 
+   static configuration. There is no supplemental classification into 
+   events, things, or concepts.
+
+2. **Events as Transitions (Edges)**  
+   All dynamic change is captured exclusively by edges. An edge from state 
+   A to state B represents the occurrence of an event that trans-
+   forms or links A into B. This unifies the semantics of time and causation:
+   every change is an event, regardless of context.
+
+3. **Simplification and Clarity**  
+   With states as nodes and events as edges, the representation becomes 
+   intuitively similar to classical state-transition diagrams or finite
+   state machines. The model automatically enforces simplicity because it
+   does not require additional labels to capture permanence (as in “things”)
+   or abstract properties (as in “concepts”). Instead, all potentially
+   differing aspects are considered properties of the states or are reflected
+   in the nature of the transitions.
+
+## Comparison with the Semantic Spacetime Approach
+
+- **Burgess’s Model**  
+  Burgess’s approach differentiates between transient events, persistent 
+  things, and invariant concepts. The four irreducible link types (NEAR,
+  LEADS TO, CONTAINS, EXPRESSES) and the additional γ(3,4) representation add 
+  layers of nuance that are intended to capture a wide variety of real-world
+  phenomena. However, this multiplicity can lead to complexity that may not be
+  necessary for all applications.
+
+- **Simpler Event/State Model**  
+  In contrast, the event/state model reduces the number of abstractions by:  
+  • Modeling every situation as a state.  
+  • Representing any change purely as an event along an edge.  
+  This reduction in conceptual overhead makes the model more accessible
+  and easier to implement, especially in domains where a coarse view of
+  process dynamics is sufficient.
+
+## Discussion and Implications
+
+The simpler model raises some important reflections:
+- **Expressiveness vs. Simplicity:**  
+  While Mark Burgess’s Semantic Spacetime model is highly nuanced, it may
+  conflate or over-specify roles that a more elegant event/state model can handle
+  with fewer assumptions.
+- **Context and Granularity:**  
+  The event/state model is especially attractive when the system under study
+  does not require simultaneous representation of multiple layers of meaning
+  (such as material realization versus conceptual abstraction).
+- **Applicability in AI and Process Modeling:**  
+  Machine learning models and state-based systems (like finite state machines)
+  often benefit from the inherent simplicity of treating states as nodes and
+  events as the only dynamic change. This simplicity can lead to more robust and
+  interpretable reasoning, particularly during process inference.
+
+In summary, while Burgess’s model offers a sophisticated framework that
+captures subtle distinctions in semantic relationships, a simpler event/state
+model—where nodes are merely states and edges are the events driving
+transitions—may sometimes be more elegant and practical. The choice
+between these approaches ultimately depends on the required level of
+granularity and the specific application in question.
 
 ---
 
 class: center, middle
 
 # Thank You!
-
