@@ -18,11 +18,15 @@ edges:
 - CONTAINS is a state -- why isn't that a node? 
 - EXPRESSES is a state -- why isn't that a node?
 
+Add a discussion of these points in alternative.md.
+
 Sysmsg: 
   Analyze the paper and improve analysis.md.  Wrap lines at 70 characters.
   Do not rewrap lines unless they are longer than 70 characters.
+  Do not rewrap markdown header lines.
 In: 
   Semantics_Graphical.txt
   analysis.md
 Out: 
   analysis.md
+  alternative.md
