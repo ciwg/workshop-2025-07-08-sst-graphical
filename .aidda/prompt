@@ -1,10 +1,15 @@
-create slides
+split slides
 
 Replace the slides in README.md with a two-part remark.js slide deck
 that covers:
 
 - part 1: the contents of analysis.md
 - part 2: the contents of alternative.md
+
+Split the slides into smaller slides; no slide should be longer than
+about 10 lines.
+
+Each slide should be a series of bullet points, not a paragraph.
 
 Sysmsg: 
   Wrap lines at 70 characters. Do not rewrap lines unless they are
